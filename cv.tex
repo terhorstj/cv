@@ -29,6 +29,7 @@
 
 	% global definitions
 
+	\def\myname{John Terhorst}
 	\def\mycolor{Red}%\definecolor{\mycolor}{RGB}{15,77,146}
 
 	\setlength{\parindent}{0pt}
@@ -43,37 +44,37 @@
 
 	% doc info
 
-        \author{John Terhorst}
-        \title{Curriculum Vit\ae}
-        \def\position{Adjunct Assistant Professor of Chemistry}
-        \def\currempl{Vanguard University of Southern California}
+    \author{\myname}
+    \title{Curriculum Vit\ae}
+    \def\position{Adjunct Assistant Professor of Chemistry}
+    \def\currempl{Vanguard University of Southern California}
 
-	\newif\ifweb
- 	\webfalse % \webtrue
- 	\ifweb  
+		\newif\ifweb
+	 	\webfalse % \webtrue
+	 	\ifweb  
             \def\address{55 Fair Drive, Costa Mesa, California 92626}
-	    \def\dept{School of Natural Sciences and Mathematics}
-	    \renewcommand{\maketitle}{
-			{\huge{\color{\mycolor}\textbf{\theauthor}} / \hspace{-0.5mm}\thetitle}
+		    \def\dept{School of Natural Sciences and Mathematics}
+		    \renewcommand{\maketitle}{
+				{\huge{\color{\mycolor}\textbf{\theauthor}} / \hspace{-0.5mm}\thetitle}
 
-			\position\ / \dept \\
-			\currempl\ / \address
+				\position\ / \dept \\
+				\currempl\ / \address
 
-			\vspace*{0pt}
-			}
-	\else
-	    \def\address{123 Home Street, Anytown, USA}
-	    \def\phone{(123) 456-7890}
-	    \def\mymail{\email{john@email.com}}
-	    \renewcommand{\maketitle}{
-			{\huge{\color{\mycolor}\textbf{\theauthor}} / \hspace{-0.5mm}\thetitle}
+				\vspace*{0pt}
+				}
+		\else
+		    \def\address{123 Home Street, Anytown, USA}
+		    \def\phone{(123) 456-7890}
+		    \def\mymail{\email{name@email.com}}
+		    \renewcommand{\maketitle}{
+				{\huge{\color{\mycolor}\textbf{\theauthor}} / \hspace{-0.5mm}\thetitle}
 
-			\position\ / \currempl \\
-			\address\ / \phone\ / \mymail 
+				\position\ / \currempl \\
+				\address\ / \phone\ / \mymail 
 
-			\vspace*{0pt}
-			}
-	\fi
+				\vspace*{0pt}
+				}
+		\fi
 
 	% ==========================================================================================
 	% ==========================================================================================
@@ -103,21 +104,21 @@
 
 	\newcommand*\paritem[2]{\textbf{#1} #2}
 
-        \newcommand*\eduitem[4]{\textbf{#1}, \textbf{#2}, #3\\#4}
+	\newcommand*\eduitem[4]{\textbf{#1}, \textbf{#2}, #3\\#4}
 
-   	\newcommand*\teitem[4]{\textbf{#1}: #2 #3 \textbf{#4}}
+	\newcommand*\teitem[4]{\textbf{#1}: #2 #3 \textbf{#4}}
 
-   	\newcommand*\lectitem[2]{\textbf{#1}. #2}
+	\newcommand*\lectitem[2]{\textbf{#1}. #2}
 
-        \newcommand*\resitem[7]{\textbf{#1}, \textbf{#2}, \textbf{#3}, #4\\#5 \textit{#6}: #7}
-    
-        \newcommand*\pubitem[7]{{#1} {``#2''} \textit{#3} \textbf{#4}, \textit{#5}, #6. \doi{#7}}
-    
-        \newcommand*\thesis[7]{#1 #2 #3. \textbf{#4}. #5, #6. {#7 pages.}}
-    
-        \newcommand*\sciprog[5]{#1. #2. (#3): #4 \textbf{#5}}          
-    
-        \newcommand*\pres[8]{#1 #2. #3. #4, #5, #6. #7, #8.}
+	\newcommand*\resitem[7]{\textbf{#1}, \textbf{#2}, \textbf{#3}, #4\\#5 \textit{#6}: #7}
+
+	\newcommand*\pubitem[7]{{#1} {``#2''} \textit{#3} \textbf{#4}, \textit{#5}, #6. \doi{#7}}
+
+	\newcommand*\thesis[7]{#1 #2 #3. \textbf{#4}. #5, #6. {#7 pages.}}
+
+	\newcommand*\sciprog[5]{#1. #2. (#3): #4 \textbf{#5}}          
+
+	\newcommand*\pres[8]{#1 #2. #3. #4, #5, #6. #7, #8.}
 
 	% ==========================================================================================
 	% ==========================================================================================
@@ -129,12 +130,12 @@
 		\hypersetup{
 		        colorlinks = false,
 		        urlcolor = blue,
-		        pdfauthor = {John Terhorst},
+		        pdfauthor = {\myname},
 		        pdfkeywords = {chemistry, computational chemistry, organic chemistry, 
 		                       drug design, continuum solvation, GB/SA, force fields, OPLS,
 		                       professor, teacher, Yale, Redlands, Vanguard, university},
-		        pdftitle = {John Terhorst: CV},
-		        pdfsubject = {John Terhorst: CV},
+		        pdftitle = {\myname: CV},
+		        pdfsubject = {\myname: CV},
 		        pdfpagemode = UseNone}
 
 % ==========================================================================================
@@ -197,7 +198,8 @@
 % ==========================================================================================
 % ==========================================================================================
 
-\vspace*{-2mm} \smallskip {\small \textbf{P}, Professor / \textbf{F}, Teaching Fellow / \textbf{A}, Teaching Assistant / \textbf{T}, Tutor / \textbf{G}, Group Tutor} \vspace*{-2mm}
+\vspace*{-2mm} \smallskip {\small \textbf{P}, Professor / \textbf{F}, Teaching Fellow / 
+\textbf{A}, Teaching Assistant / \textbf{T}, Tutor / \textbf{G}, Group Tutor} \vspace*{-2mm}
 
 % ==========================================================================================
 % ==========================================================================================
