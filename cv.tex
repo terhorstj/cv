@@ -9,7 +9,7 @@
 % ==========================================================================================
 % ==========================================================================================
 
-\documentclass[10pt]{article}
+\documentclass[11pt]{article}
 
 	% ==========================================================================================
 	% ==========================================================================================
@@ -17,10 +17,12 @@
 
 	% packages
 
-	\usepackage{microtype,verbatim,soul,titling}
-	\usepackage{fontspec}
+	\usepackage{microtype}
+	\frenchspacing
+	\usepackage{xltxtra,comment,soul,titling}
+	\usepackage[all]{nowidow}
 	\usepackage[explicit]{titlesec}
-	\usepackage[top=1.25in, bottom=1in, left=2.5in, right=1in]{geometry} 
+	\usepackage[top=0.9in, bottom=0.9in, left=1.45in, right=1.45in]{geometry} 
 	\usepackage[usenames,dvipsnames]{xcolor}
 
 	% ==========================================================================================
@@ -35,8 +37,8 @@
 	\setlength{\parindent}{0pt}
 	\setlength{\parskip}{4pt}
 
-	\defaultfontfeatures{Scale=MatchLowercase}
-	\setromanfont{Sentinel Book}
+	\setromanfont{Equity Text A}
+	\setsansfont{Concourse T4}
 
 	% ==========================================================================================
 	% ==========================================================================================
@@ -54,9 +56,9 @@
  	\webtrue
  	\ifweb
  		\def\address{55 Fair Drive, Costa Mesa, California 92626}
-	    \def\dept{Dept.\ of Natural Sciences and Mathematics}
+	    \def\dept{Dept.\ of Environmental and Chemical Sciences}
 	    \renewcommand{\maketitle}{
-			{\huge{\color{\mycolor}\textbf{\theauthor}} / \hspace{-0.5mm}\thetitle}
+			{\vspace*{0.15cm}\huge{\color{\mycolor}\hspace*{1.0mm}\textbf{\theauthor}} / \hspace{-0.5mm}\thetitle}
 
 			\position\ / \dept \\
 			\currempl\ / \address
@@ -68,7 +70,7 @@
 	    \def\phone{562.458.8254}
 	    \def\mymail{\email{john@johnterhorst.com}}
 	    \renewcommand{\maketitle}{
-			{\huge{\color{\mycolor}\textbf{\theauthor}} / \hspace{-0.5mm}\thetitle}
+			{\vspace*{0.15cm}\huge{\color{\mycolor}\hspace*{1.0mm}\textbf{\theauthor}} / \hspace{-0.5mm}\thetitle}
 
 			\position\ / \currempl \\
 			\address\ / \phone\ / \mymail 
@@ -104,31 +106,33 @@
 	{#1}
 	\titlespacing\subsection{0pt}{8pt}{2pt}
 
-	\newcommand*\doilink[1]{\href{http://dx.doi.org/#1}{#1}} 
+	\newcommand{\doilink}[1]{\href{http://dx.doi.org/#1}{#1}} 
 
-	\newcommand*\doi[1]{doi:\doilink{#1}}
+	\newcommand{\doi}[1]{doi:\doilink{#1}}
 
-	\newcommand*\email[1]{\href{mailto:#1}{#1}}
+	\newcommand{\email}[1]{\href{mailto:#1}{#1}}
 
-	\newcommand*\paritem[2]{\textbf{#1} #2}
+	\newcommand{\paritem}[2]{\textbf{#1} #2}
 
-    \newcommand*\eduitem[4]{\textbf{#1}, \textbf{#2}, #3\\#4}
+    \newcommand{\eduitem}[4]{\textbf{#1}, \textbf{#2}, #3\\#4}
 
-    \newcommand*\careeritem[4]{\textbf{#1}, #2\\#3, #4}
+    \newcommand{\careeritem}[4]{\textbf{#1}, #2\\#3, #4}
 
-   	\newcommand*\teitem[4]{\textbf{#1}: #2 #3 \textbf{#4}}
+   	\newcommand{\teitem}[4]{\textbf{#1}: #2 #3 \textbf{#4}}
 
-   	\newcommand*\lectitem[2]{\textbf{#1} #2}
+   	\newcommand{\lectitem}[2]{\textbf{#1} #2}
 
-    \newcommand*\resitem[7]{\textbf{#1}, \textbf{#2}, \textbf{#3}, #4\\#5 \textit{#6}: #7}
+    \newcommand{\resitem}[7]{\textbf{#1}, \textbf{#2}, \textbf{#3}, #4\\#5 \textit{#6}: #7}
 
-    \newcommand*\pubitem[7]{{#1} {``#2''} \textit{#3} \textbf{#4}, \textit{#5}, #6. \doi{#7}}
+    \newcommand{\pubitem}[7]{{#1} {``#2''} \textit{#3} (#4), \textit{#5}, #6. \doi{#7}}
 
-    \newcommand*\thesis[7]{#1 #2 #3. \textbf{#4}. #5, #6. {#7 pages.}}
+    \newcommand{\thesis}[7]{#1 #2 #3. #4. #5, #6. {#7 pages.}}
 
-    \newcommand*\sciprog[5]{#1. #2. (#3): #4 \textbf{#5}}          
+    \newcommand{\sciprog}[5]{#1. #2 (#3): #4 #5}          
 
-    \newcommand*\pres[8]{#1 #2. #3. #4, #5, #6. #7, #8.}
+    \newcommand{\pres}[8]{#1 #2. #3. #4, #5, #6. #7, #8.}
+
+    \newcommand{\presnp}[8]{#1 #2 #3. #4, #5, #6. #7, #8.}
 
 	% ==========================================================================================
 	% ==========================================================================================
@@ -170,12 +174,17 @@
 % ==========================================================================================
 % ==========================================================================================
 
+I am a \textbf{college professor and private tutor} with 17 years of teaching experience. In these roles I teach college classes and \textbf{engage with students to help nurture a passion for and excitement about} science. 
+
+\begin{comment}
+
 \paritem{Research} {in Monte Carlo statistical perturbation theory for computing free-energy binding affinities using implicit solvent models, including software design and implementation.} 
 
 \paritem{Development} {of molecular mechanics force fields including explicit treatment of polarization effects for use in computer-aided drug design of therapeutic agents targeting infectious, inflammatory, and hyperproliferative diseases.} 
 
 \paritem{Seventeen years experience in instruction} {of chemistry, including organic chemistry and spectroscopy lecture and lab courses, as a teaching assistant, private tutor, graduate teaching fellow, and university professor.}
 
+\end{comment}
 
 % ==========================================================================================
 % ==========================================================================================
@@ -183,13 +192,13 @@
 
 \section{Career Summary}
 
-\careeritem{Adjunct Professor of Chemistry}{2020-Present}
+\careeritem{Adjunct Professor of Chemistry}{2020--Present}
 {University of Redlands}{Redlands, California.}
 
-\careeritem{Adjunct Assistant Professor of Chemistry}{2012-Present}
+\careeritem{Adjunct Assistant Professor of Chemistry}{2012--Present}
 {Vanguard University}{Costa Mesa, California.}
 
-\careeritem{Private Tutor}{2012-Present}
+\careeritem{Private Tutor}{2012--Present}
 {WyzAnt, Inc.}{Redlands, California.}
 
 % ==========================================================================================
@@ -202,16 +211,16 @@
 % ==========================================================================================
 % ==========================================================================================
 
-\eduitem{Ph.D.\ in Chemistry}{\href{http://www.yale.edu/}{Yale University}}{2006-2011}
+\eduitem{Ph.D.\ in Chemistry}{\href{http://www.yale.edu/}{Yale University}}{2006--2011}
 {Chemical theory and computation.} 
 
-\eduitem{M.S.\ in Chemistry}{\href{http://www.yale.edu/}{Yale University}}{2006-2008}
+\eduitem{M.S.\ in Chemistry}{\href{http://www.yale.edu/}{Yale University}}{2006--2008}
 {Physical organic chemistry.} 
 
-\eduitem{B.S.\ in Chemistry}{\href{http://www.redlands.edu/}{University of Redlands}}{2002-2006}
+\eduitem{B.S.\ in Chemistry}{\href{http://www.redlands.edu/}{University of Redlands}}{2002--2006}
 {Departmental Honors.} 
 
-\eduitem{B.S.\ in Biology}{\href{http://www.redlands.edu/}{University of Redlands}}{2002-2006}
+\eduitem{B.S.\ in Biology}{\href{http://www.redlands.edu/}{University of Redlands}}{2002--2006}
 {Biochemistry program.} 
 
 % ==========================================================================================
@@ -237,7 +246,7 @@
 % ==========================================================================================
 
 \teitem{Introductory, Honors, A.P., General, and Organic Chemistry}{Yale University, Stanford University, Dartmouth College, Tulane University, UNC Chapel Hill, Texas A\&M University, University of Miami, University of Delaware, Vanderbilt University, Boston University, University of Kentucky, Phillips Andover Academy, UC Irvine, UC Riverside, University of Southern California, University of Redlands, La Sierra University, Chapman University, Cal State Fullerton, Furman University, Saddleback College, Irvine Valley College, 
-University High School, Newport Beach High School, Woodbridge High School, San Juan Hills High School, Corona del Mar High School, Yorba Linda High School, Mater Dei High School, Troy High School, Cornelia Connelly School, Sage Hill School, Deerfield Academy, Fairmont Preparatory Academy.}{1350+ hours, 2012-2019.}{T, G} 
+University High School, Newport Beach High School, Woodbridge High School, San Juan Hills High School, Corona del Mar High School, Yorba Linda High School, Mater Dei High School, Troy High School, Cornelia Connelly School, Sage Hill School, Deerfield Academy, Fairmont Preparatory Academy.}{1500+ hours, 2012--2021.}{T, G} 
 
 \teitem{Public Profile}{\href{https://www.wyzant.com/match/tutor/80301850}{https://www.wyzant.com/match/tutor/80301850,}}{5.0$\star$ (400+ ratings)}{}
 
@@ -257,19 +266,19 @@ University High School, Newport Beach High School, Woodbridge High School, San J
 % ==========================================================================================
 % ==========================================================================================
 
-\teitem{CHEM 485}{Research Topics in Chemistry. Computational, theoretical, and physical organic chemistry.}{Summer 2013-2018.}{P}
+\teitem{CHEM 485}{Research Topics in Chemistry. Computational, theoretical, and physical organic chemistry.}{Summer 2013--2018.}{P}
 
-\teitem{CHEM 455}{Chemistry Teaching Internship. Oversight of students planning and conducting a lecture, recitation, and/or laboratory course.}{Fall and Spring 2016-2021}{P}
+%\teitem{CHEM 455}{Chemistry Teaching Internship. Oversight of students planning and conducting a lecture, recitation, and/or laboratory course.}{Fall and Spring 2016--2021}{P}
 
 \teitem{CHEM 308}{Introduction to Spectroscopy. Includes IR spectroscopy, \raisebox{1mm}{\scriptsize 1}H and \raisebox{1mm}{\scriptsize 13}C NMR spectroscopy, mass spectrometry, and UV/vis spectrophotometry.}{Spring 2014.}{P}
 
-\teitem{CHEM 304/305}{Organic Chemistry I/II. Functional groups, nomenclature, stereochemistry, aromaticity, reaction mechanisms, and molecular orbital theory.}{Summer 2012-2021, Fall 2019 and 2021, and Spring 2013, 2016, and 2021.}{P} 
+\teitem{CHEM 304/305}{Organic Chemistry I/II. Functional groups, nomenclature, stereochemistry, aromaticity, reaction mechanisms, and molecular orbital theory.}{Summer 2012--2021, Fall 2019 and 2021, and Spring 2013, 2016, and 2021.}{P} 
 
-\teitem{CHEM 120/121}{General Chemistry I/II. Atomic structure, bonding, stoichiometry, and reactions; kinetics, equilibrium, thermodynamics, and electrochemistry.}{Spring 2016-2021, and Fall 2015-2021.}{P}
+\teitem{CHEM 120/121}{General Chemistry I/II. Atomic structure, bonding, stoichiometry, and reactions; kinetics, equilibrium, thermodynamics, and electrochemistry.}{Spring 2016--2021, and Fall 2015--2021.}{P}
 
-\teitem{CHEM 113}{Fundamentals of General, Organic, and Biochemistry II. Foundational principles, functional groups, simple organic reactions, carbohydrates, lipids, protein synthesis, nucleic acids, and biochemical applications.}{Spring 2013-2015.}{P} 
+\teitem{CHEM 113}{Fundamentals of General, Organic, and Biochemistry II. Functional groups, simple organic reactions, carbohydrates, lipids, proteins, nucleic acids, and biochemical applications.}{Spring 2013--2015.}{P} 
 
-\teitem{CHEM 112C}{Fundamentals of General, Organic, and Biochemistry I. Atomic theory, periodic trends, measurements, stoichiometry, chemical reactions and equilibrium, and acids and bases.}{Fall 2013-2014.}{P}
+\teitem{CHEM 112C}{Fundamentals of General, Organic, and Biochemistry I. Atomic theory, periodic trends, measurements, stoichiometry, chemical reactions and equilibrium, and acids and bases.}{Fall 2013--2014.}{P}
 
 % ==========================================================================================
 % ==========================================================================================
@@ -287,7 +296,7 @@ University High School, Newport Beach High School, Woodbridge High School, San J
 
 \teitem{CHEM 220}{Introductory Organic Chemistry. The first semester in a two-semester sequence offers a comprehensive look at the fundamental principles of organic chemistry. Offered off-sequence for students on an accelerated track.}{Spring, 2010.}{F, T}
 
-\teitem{CHEM 114}{General Chemistry I. A survey of modern descriptive, inorganic, and physical chemistry. Topics included atomic theory, stoichiometry, thermochemistry, chemical periodicity, concepts in chemical bonding, and the shapes of molecules.}{Fall, 2007.}{F}
+\teitem{CHEM 114}{General Chemistry I. Descriptive, inorganic, and physical chemistry. Atomic theory, stoichiometry, thermochemistry, periodicity, bonding, and molecular geometry.}{Fall, 2007.}{F}
 
 % ==========================================================================================
 % ==========================================================================================
@@ -299,7 +308,7 @@ University High School, Newport Beach High School, Woodbridge High School, San J
 % ==========================================================================================
 % ==========================================================================================
 
-\teitem{CHEM 231/232}{Organic Chemistry I/II. A two-semester sequence offering a comprehensive survey of the chemistry of carbon-containing compounds, their structure, nomenclature, physical properties, spectroscopy (IR, GC-MS, NMR), stereochemistry, chemical reactivities, reaction mechanisms, and synthesis.}{Fall, 2004 through Spring, 2006.}{T, G, A}
+\teitem{CHEM 231/232}{Organic Chemistry I/II. Comprehensive survey of the chemistry of carbon-containing compounds, their structure, nomenclature, physical properties, spectroscopy (IR, GC-MS, NMR), stereochemistry, chemical reactivities, reaction mechanisms, and synthesis.}{Fall, 2004 through Spring, 2006.}{T, G, A}
 
 \teitem{CHEM 131/132}{General Chemistry I/II.  A two-semester sequence covering stoichiometry and modern views of the properties, structure, and reactivity of atoms and molecules.}{Fall, 2003 and 2020 and Spring, 2004 and 2021.}{P, T}
 
@@ -335,7 +344,7 @@ University High School, Newport Beach High School, Woodbridge High School, San J
 {The Dox Fellowship was established to provide stipend support to graduate students 
 in the field of organic chemistry, given in recognition of excellence in academics and research.}
 
-\eduitem{Distinguished Chemistry Fellowship}{Yale University}{2006-2011}
+\eduitem{Distinguished Chemistry Fellowship}{Yale University}{2006--2011}
 {Graduate students of exceptional promise are awarded the Distinguished Chemistry Fellowship for five years of
 stipend support while conducting research towards the completion of a doctorate in chemistry.}
 
@@ -368,22 +377,22 @@ to a junior male biology student planning a career in teaching or research.}
 
 \textbf{Director}, Summer Undergraduate Research Program, Vanguard University, 2015 
 
-\resitem{Research Advisor}{Computational Chemistry}{Vanguard University}{2013-2016, 2018}
+\resitem{Research Advisor}{Computational Chemistry}{Vanguard University}{2013--2016, 2018}
 {Studies of pure liquids, conformational dynamics, and molecular design of anti-HIV agents.}
 {Advisees}{Chris Bridges (B.S., 2014), Justin Pugh (B.S., 2014), Josiah Morales (B.S., 2014), Brennan Gregory (B.S., 2016), Chalane Records (B.S., 2015), Ashley Harris (B.S., 2016),  Israel Sanchez (B.S., 2016), Emily Eggleston (B.S., 2018), Mia Kilekas (B.S., 2018), and Kacie Qui\~nones, (B.S., 2019).}
 
-\resitem{Graduate Student}{Chemical Theory and Computation}{Yale University}{2007-2011}
+\resitem{Graduate Student}{Chemical Theory and Computation}{Yale University}{2007--2011}
 {Conformational dynamics, molecular mechanical 
 force field parameters, and new methods for computing free 
 energies of binding using continuum solvent models in a Monte Carlo 
 manifold.}{Advisor}{William L.\ Jorgensen.}
 
-\resitem{Undergraduate Student}{Organic Chemistry}{University of Redlands}{2004-2006}
+\resitem{Undergraduate Student}{Organic Chemistry}{University of Redlands}{2004--2006}
 {The [3+2] cycloaddition of carbonyl oxides in the synthesis of 1,2-dioxolanes, 
 preparation of carbonyl oxides from precursors other than primary ozonides, 
 and total synthesis of jasmine ketolactone.}{Advisor}{David P.\ Soulsby.}
 
-\resitem{Undergraduate Student}{Theoretical Chemistry}{University of Redlands}{2003-2004}
+\resitem{Undergraduate Student}{Theoretical Chemistry}{University of Redlands}{2003--2004}
 {Theoretical investigations of photopumping in doubly illuminated liquid membranes containing photoactive carriers.}{Advisor}
 {Teresa Longin.}
 
@@ -401,13 +410,13 @@ and total synthesis of jasmine ketolactone.}{Advisor}{David P.\ Soulsby.}
 {\textit{E}/\textit{Z} Energetics for Molecular Modeling and Design.}
 {J.\ Chem.\ Theory Comput.}
 {2010}{6}%{9}
-{2762-2769}{10.1021/ct1004017}
+{2762--2769}{10.1021/ct1004017}
 
 \pubitem{Longin, T. L.; \textbf{Terhorst, J}.; Lang, C.}
 {Simulations of Photopumping in Doubly Illuminated Liquid Membranes Containing Photoactive Carriers.}
 {J.\ Phys.\ Chem.\ B}
 {2010}{114}%{48}
-{15846-15856}{10.1021/jp106802q}
+{15846--15856}{10.1021/jp106802q}
 
 % ==========================================================================================
 % ==========================================================================================
@@ -442,7 +451,7 @@ and total synthesis of jasmine ketolactone.}{Advisor}{David P.\ Soulsby.}
 {contributor, proprietary}
 {Implementation of new modules for utilizing the GB/SA continuum solvent 
 model in simulations with Monte Carlo free-energy perturbation.}
-{2008-2011}
+{2008--2011}
 
 \sciprog{\href{http://zarbi.chem.yale.edu/software.html}{BOSS}}
 {Jorgensen, W. L.; Tirado-Rives, J.}
@@ -451,7 +460,7 @@ model in simulations with Monte Carlo free-energy perturbation.}
 functionalized heterocyles, and expansion of code for 
 inclusion of solvent-by-solvent polarization within the 
 OPLS-AA polarizable force field.}
-{2008-2011}
+{2008--2011}
 
 \sciprog{DIHOPT}
 {\textbf{Terhorst, J}.; Jorgensen, W. L.}
@@ -469,6 +478,14 @@ of dihedral torsion coefficients for the OPLS-AA force field.}
 % ==========================================================================================
 % ==========================================================================================
 % ==========================================================================================
+
+\presnp{\textbf{Terhorst, J}.}
+{How Do You Know?}
+{Chemistry Seminar}
+{Department of Chemistry}
+{University of Redlands}
+{Redlands, California}
+{January}{2020}
 
 \pres{Eggleston, E.; Kilekas, M.; \textbf{Terhorst, J}.}
 {Computer-Aided Drug Design Using Free-Energy Perturbation and Molecular Docking}
@@ -488,12 +505,13 @@ of dihedral torsion coefficients for the OPLS-AA force field.}
 
 \pres{\textbf{Terhorst, J}.; Jorgensen, W.\ L.}
 {Optimizing the OPLS Force Field for NNRTI Drug Design}
-{Bristol-Meyers Squibb Research Symposium}
+{Bristol-Meyers Squibb Symposium}
 {Department of Chemistry}
 {Yale University}
 {New Haven, Connecticut}
 {August}{2011}
 
+\begin{comment}
 \pres{\textbf{Terhorst, J}.; Jorgensen, W.\ L.}
 {Examining Intersubstituent Distances in Heterocycles and Evaluation of Tautomeric Equilibria}
 {Connecticut Organic Chemistry Symposium}
@@ -501,6 +519,7 @@ of dihedral torsion coefficients for the OPLS-AA force field.}
 {American Chemical Society}
 {New Haven, Connecticut}
 {January}{2010}
+\end{comment}
 
 % ==========================================================================================
 % ==========================================================================================
@@ -512,8 +531,7 @@ of dihedral torsion coefficients for the OPLS-AA force field.}
 % ==========================================================================================
 % ==========================================================================================
 
-\textbf{Laboratory Skills and Expertise:} Organic synthesis, separation (%thin-layer
-TLC and column chromatography, extraction, recrystallization, distillation), characterization (GC-MS, HPLC, CE, NMR, IR, UV/Vis), computational chemistry (MM, QM, MC, MC/FEP, GB/SA). \textbf{Chemical Simulation and Visualization:} BOSS, MCPRO, Gaussian, MGL AutoDock, Spartan, Chimera, PyMol. \textbf{Productivity:} Microsoft Office, vim, GNUplot. \textbf{Programming:} Perl, FORTRAN, HTML, bash/tcsh, \LaTeX, GNUprof. \textbf{Operating Systems:} macOS, Linux (Debian/Ubuntu, Redhat/Fedora), UNIX, Windows.
+\textbf{Laboratory Skills and Expertise:} Organic synthesis, separation (column chromatography, extraction, recrystallization, distillation), characterization (GC-MS, NMR, IR, UV/Vis), computational chemistry (MM, QM, MC, MC/FEP, GB/SA). \textbf{Chemical Simulation and Visualization:} BOSS, MCPRO, Gaussian, MGL AutoDock, Spartan, Chimera, PyMol. \textbf{Productivity:} Microsoft Office, vim, GNUplot. \textbf{Programming:} Perl, FORTRAN, HTML, bash/tcsh, \LaTeX, GNUprof. \textbf{Operating Systems:} macOS, Linux (Debian/Ubuntu), UNIX, Windows.
 
 % ==========================================================================================
 % ==========================================================================================
